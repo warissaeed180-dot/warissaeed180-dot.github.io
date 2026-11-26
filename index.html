@@ -1,384 +1,977 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Red Pepper — Pizza & More | Big flavour. Zero boring.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- ═══ SPLASH / WELCOME SCREEN ═══ -->
-<div class="splash" id="splash" role="dialog" aria-modal="true" aria-label="Welcome to Red Pepper">
-  <div class="splash-content">
-    <div class="splash-logo"><span class="logo-flame" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M17.4 2.7c1.1 4.7-1.2 7.1-3.1 9.7-1.8 2.4-3.7 5-2.2 8.7-2.9-1.2-4.8-3.9-4.8-7.2 0-4.5 3.2-8.2 7.1-9.9-.7 3.7.9 5.3 2.1 6.6 1.2-2.4 1.9-5 0.9-7.9Z"/><path d="M20.5 8.6c3.7 3 5.2 6.5 4.1 10.7-1.2 4.6-5.2 7.7-9.8 7.7-5.3 0-9.5-3.7-9.9-8.8 2.2 2.7 5.3 4 8.5 3.3 4.3-.9 6.3-5.6 7.1-12.9Z"/><path class="flame-core" d="M16.2 15.1c2.7 2.1 4 4.3 3.4 7-.6 2.7-3 4.5-5.7 4.3-3-.2-5.1-2.3-5.2-5.1 1.2 1.4 3 2.1 4.8 1.6 2.4-.7 3-3.9 2.7-7.8Z"/></svg></span><span class="logo-text big">RED PEPPER<small>PIZZA &amp; MORE</small></span></div>
-    <div class="splash-img-wrap"><img src="images/dough-toss.png" alt="Chef tossing fresh pizza dough" class="splash-img"></div>
-    <p class="splash-eyebrow">YOUR NEIGHBOURHOOD KITCHEN</p>
-    <h2 class="splash-welcome" aria-label="Welcome to Red Pepper"><span class="welcome-line">Welcome to</span> <span class="red welcome-word">Red Pepper</span></h2>
-    <p class="splash-tag">Big flavour. Zero boring. Fresh dough, tossed daily.</p>
-    <div class="splash-actions">
-      <button class="splash-enter" id="splashEnter">Explore the menu <span>→</span></button>
-      <button class="splash-login" id="splashLogin"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20v-1.5A6.5 6.5 0 0 1 11.5 12h1A6.5 6.5 0 0 1 19 18.5V20"/></svg> Login / Sign up</button>
-    </div>
-    <div class="splash-bar"><span></span></div>
-    <p class="splash-skip">Pizza &amp; Grill · Wok &amp; Roll · Made fresh for you</p>
-  </div>
-</div>
-
-<div class="wok-loader" id="wokLoader" role="status" aria-live="polite" hidden>
-  <div class="wok-loader-card">
-    <div class="wok-scene" aria-hidden="true">
-      <span class="wok-steam steam-one">〰</span>
-      <span class="wok-steam steam-two">〰</span>
-      <span class="wok-ingredient ingredient-one">🥕</span>
-      <span class="wok-ingredient ingredient-two">🥦</span>
-      <span class="wok-ingredient ingredient-three">🍜</span>
-      <span class="wok-flame">🔥</span>
-      <div class="wok-pan"></div>
-      <span class="wok-handle"></span>
-      <span class="wok-chopsticks">🥢</span>
-    </div>
-    <p class="kicker">✦ WOK &amp; ROLL</p>
-    <h2>Wok &amp; Roll!<br><span>Your Chinese Menu Is Loading</span></h2>
-    <div class="wok-loader-track"><span></span></div>
-  </div>
-</div>
-
-<div class="fire-loader" id="fireLoader" role="status" aria-live="polite" hidden>
-  <div class="fire-loader-card">
-    <div class="oven-scene" aria-hidden="true">
-      <div class="oven-glow"></div>
-      <div class="oven-mouth">
-        <span class="oven-flame flame-left">🔥</span>
-        <span class="oven-flame flame-right">🔥</span>
-        <div class="oven-pizza"><span>🍕</span></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Pepper — Pizza & More | Big flavour. Zero boring.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ═══ SPLASH / WELCOME SCREEN ═══ -->
+    <div
+      class="splash"
+      id="splash"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Welcome to Red Pepper"
+    >
+      <div class="splash-content">
+        <div class="splash-logo">
+          <span class="logo-flame" aria-hidden="true"
+            ><svg viewBox="0 0 32 32">
+              <path
+                d="M17.4 2.7c1.1 4.7-1.2 7.1-3.1 9.7-1.8 2.4-3.7 5-2.2 8.7-2.9-1.2-4.8-3.9-4.8-7.2 0-4.5 3.2-8.2 7.1-9.9-.7 3.7.9 5.3 2.1 6.6 1.2-2.4 1.9-5 0.9-7.9Z"
+              />
+              <path
+                d="M20.5 8.6c3.7 3 5.2 6.5 4.1 10.7-1.2 4.6-5.2 7.7-9.8 7.7-5.3 0-9.5-3.7-9.9-8.8 2.2 2.7 5.3 4 8.5 3.3 4.3-.9 6.3-5.6 7.1-12.9Z"
+              />
+              <path
+                class="flame-core"
+                d="M16.2 15.1c2.7 2.1 4 4.3 3.4 7-.6 2.7-3 4.5-5.7 4.3-3-.2-5.1-2.3-5.2-5.1 1.2 1.4 3 2.1 4.8 1.6 2.4-.7 3-3.9 2.7-7.8Z"
+              /></svg></span
+          ><span class="logo-text big"
+            >RED PEPPER<small>PIZZA &amp; MORE</small></span
+          >
+        </div>
+        <div class="splash-img-wrap">
+          <img
+            src="images/dough-toss.png"
+            alt="Chef tossing fresh pizza dough"
+            class="splash-img"
+          />
+        </div>
+        <p class="splash-eyebrow">YOUR NEIGHBOURHOOD KITCHEN</p>
+        <h2 class="splash-welcome" aria-label="Welcome to Red Pepper">
+          <span class="welcome-line">Welcome to</span>
+          <span class="red welcome-word">Red Pepper</span>
+        </h2>
+        <p class="splash-tag">
+          Big flavour. Zero boring. Fresh dough, tossed daily.
+        </p>
+        <div class="splash-actions">
+          <button class="splash-enter" id="splashEnter">
+            Explore the menu <span>→</span>
+          </button>
+          <button class="splash-login" id="splashLogin">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="7.5" r="3.5" />
+              <path
+                d="M5 20v-1.5A6.5 6.5 0 0 1 11.5 12h1A6.5 6.5 0 0 1 19 18.5V20"
+              />
+            </svg>
+            Login / Sign up
+          </button>
+        </div>
+        <div class="splash-bar"><span></span></div>
+        <p class="splash-skip">
+          Pizza &amp; Grill · Wok &amp; Roll · Made fresh for you
+        </p>
       </div>
-      <div class="oven-base"></div>
-      <span class="oven-spark spark-one">✦</span>
-      <span class="oven-spark spark-two">✦</span>
-      <span class="oven-spark spark-three">✦</span>
     </div>
-    <p class="kicker">✦ FRESH FROM THE FIRE</p>
-    <h2>Preparing Your<br><span>Pizza Menu</span></h2>
-    <div class="fire-loader-track"><span></span></div>
-  </div>
-</div>
 
-<div class="topstrip">
-  <span>&nbsp; HOT, FRESH &amp; ON ITS WAY</span>
-  <a href="#deals">Free delivery on orders over £25 &nbsp;→</a>
-  <span>◷ &nbsp;Open today · 11:30–23:00</span>
-</div>
+    <div
+      class="wok-loader"
+      id="wokLoader"
+      role="status"
+      aria-live="polite"
+      hidden
+    >
+      <div class="wok-loader-card">
+        <div class="wok-scene" aria-hidden="true">
+          <span class="wok-steam steam-one">〰</span>
+          <span class="wok-steam steam-two">〰</span>
+          <span class="wok-ingredient ingredient-one">🥕</span>
+          <span class="wok-ingredient ingredient-two">🥦</span>
+          <span class="wok-ingredient ingredient-three">🍜</span>
+          <span class="wok-flame">🔥</span>
+          <div class="wok-pan"></div>
+          <span class="wok-handle"></span>
+          <span class="wok-chopsticks">🥢</span>
+        </div>
+        <p class="kicker">✦ WOK &amp; ROLL</p>
+        <h2>Wok &amp; Roll!<br /><span>Your Chinese Menu Is Loading</span></h2>
+        <div class="wok-loader-track"><span></span></div>
+      </div>
+    </div>
 
-<header class="header">
-  <a class="logo" href="#home"><span class="logo-flame" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M17.4 2.7c1.1 4.7-1.2 7.1-3.1 9.7-1.8 2.4-3.7 5-2.2 8.7-2.9-1.2-4.8-3.9-4.8-7.2 0-4.5 3.2-8.2 7.1-9.9-.7 3.7.9 5.3 2.1 6.6 1.2-2.4 1.9-5 0.9-7.9Z"/><path d="M20.5 8.6c3.7 3 5.2 6.5 4.1 10.7-1.2 4.6-5.2 7.7-9.8 7.7-5.3 0-9.5-3.7-9.9-8.8 2.2 2.7 5.3 4 8.5 3.3 4.3-.9 6.3-5.6 7.1-12.9Z"/><path class="flame-core" d="M16.2 15.1c2.7 2.1 4 4.3 3.4 7-.6 2.7-3 4.5-5.7 4.3-3-.2-5.1-2.3-5.2-5.1 1.2 1.4 3 2.1 4.8 1.6 2.4-.7 3-3.9 2.7-7.8Z"/></svg></span><span class="logo-text">RED PEPPER<small>PIZZA &amp; MORE</small></span></a>
-  <nav class="main-nav">
-    <a href="#home" class="active">Home</a>
-    <a href="#menu">Menu</a>
-    <a href="#deals">Deals</a>
-    <a href="#builder">Build Your Own</a>
-  </nav>
-  <nav class="kitchen-toggle header-kitchen" aria-label="Kitchen">
-    <button class="kt-btn active" data-kitchen="pizza"><span class="dot"></span> Pizza &amp; Grill</button>
-    <button class="kt-btn" data-kitchen="wok">Wok &amp; Roll</button>
-  </nav>
-  <div class="header-right">
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
-      <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
-      <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"/></svg>
+    <div
+      class="fire-loader"
+      id="fireLoader"
+      role="status"
+      aria-live="polite"
+      hidden
+    >
+      <div class="fire-loader-card">
+        <div class="oven-scene" aria-hidden="true">
+          <div class="oven-glow"></div>
+          <div class="oven-mouth">
+            <span class="oven-flame flame-left">🔥</span>
+            <span class="oven-flame flame-right">🔥</span>
+            <div class="oven-pizza"><span>🍕</span></div>
+          </div>
+          <div class="oven-base"></div>
+          <span class="oven-spark spark-one">✦</span>
+          <span class="oven-spark spark-two">✦</span>
+          <span class="oven-spark spark-three">✦</span>
+        </div>
+        <p class="kicker">✦ FRESH FROM THE FIRE</p>
+        <h2>Preparing Your<br /><span>Pizza Menu</span></h2>
+        <div class="fire-loader-track"><span></span></div>
+      </div>
+    </div>
+
+    <div class="topstrip">
+      <span>&nbsp; HOT, FRESH &amp; ON ITS WAY</span>
+      <a href="#deals">Free delivery on orders over £25 &nbsp;→</a>
+      <span>◷ &nbsp;Open today · 11:30–23:00</span>
+    </div>
+
+    <header class="header">
+      <a class="logo" href="#home"
+        ><span class="logo-flame" aria-hidden="true"
+          ><svg viewBox="0 0 32 32">
+            <path
+              d="M17.4 2.7c1.1 4.7-1.2 7.1-3.1 9.7-1.8 2.4-3.7 5-2.2 8.7-2.9-1.2-4.8-3.9-4.8-7.2 0-4.5 3.2-8.2 7.1-9.9-.7 3.7.9 5.3 2.1 6.6 1.2-2.4 1.9-5 0.9-7.9Z"
+            />
+            <path
+              d="M20.5 8.6c3.7 3 5.2 6.5 4.1 10.7-1.2 4.6-5.2 7.7-9.8 7.7-5.3 0-9.5-3.7-9.9-8.8 2.2 2.7 5.3 4 8.5 3.3 4.3-.9 6.3-5.6 7.1-12.9Z"
+            />
+            <path
+              class="flame-core"
+              d="M16.2 15.1c2.7 2.1 4 4.3 3.4 7-.6 2.7-3 4.5-5.7 4.3-3-.2-5.1-2.3-5.2-5.1 1.2 1.4 3 2.1 4.8 1.6 2.4-.7 3-3.9 2.7-7.8Z"
+            /></svg></span
+        ><span class="logo-text"
+          >RED PEPPER<small>PIZZA &amp; MORE</small></span
+        ></a
+      >
+      <nav class="main-nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#deals">Deals</a>
+        <a href="#builder">Build Your Own</a>
+      </nav>
+      <nav class="kitchen-toggle header-kitchen" aria-label="Kitchen">
+        <button class="kt-btn active" data-kitchen="pizza">
+          <span class="dot"></span> Pizza &amp; Grill
+        </button>
+        <button class="kt-btn" data-kitchen="wok">Wok &amp; Roll</button>
+      </nav>
+      <div class="header-right">
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch to light mode"
+          title="Switch to light mode"
+        >
+          <svg
+            class="theme-icon theme-icon-sun"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="3.5" />
+            <path
+              d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"
+            />
+          </svg>
+          <svg
+            class="theme-icon theme-icon-moon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"
+            />
+          </svg>
+        </button>
+        <button class="login-btn" id="loginBtn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="7.5" r="3.5" />
+            <path
+              d="M5 20v-1.5A6.5 6.5 0 0 1 11.5 12h1A6.5 6.5 0 0 1 19 18.5V20"
+            /></svg
+          ><span>Login</span>
+        </button>
+        <button class="bag-btn" id="bagBtn" aria-label="Open your bag">
+          <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M2.5 3.5h2l2.2 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4l1.4-6.4H6.1"
+            />
+            <circle cx="9" cy="19.5" r="1.25" />
+            <circle cx="17.5" cy="19.5" r="1.25" /></svg
+          ><span>Your bag</span><span class="bag-count" id="bagCount">0</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-inner">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> GOOD FOOD. NO COMPROMISE.
+        </p>
+        <h1>Big flavour.<br />Zero <span class="red">boring.</span></h1>
+        <p class="hero-sub">
+          Hand-stretched pizza meets wok-fired favourites.<br />One kitchen. Two
+          seriously good cravings.
+        </p>
+        <a href="#menu" class="btn-red">Order something good <span>→</span></a>
+        <p class="stars">★★★★★ <span>4.8/5 from 2,400+ hungry locals</span></p>
+      </div>
+      <span class="hero-foot-left">INDEPENDENT. IN YOUR NEIGHBOURHOOD.</span>
+      <span class="hero-foot-right">— SCROLL TO EXPLORE</span>
+    </section>
+
+    <section class="order-bar">
+      <div class="wrap order-bar-inner">
+        <div class="ob-label">
+          <span class="pin"></span>
+          <div>
+            <strong>How do you want it?</strong
+            ><small>Choose your perfect pickup</small>
+          </div>
+        </div>
+        <div class="seg" id="orderType">
+          <button class="seg-btn active" data-type="Delivery">
+            <svg class="seg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+            <span>Delivery</span>
+          </button>
+          <button class="seg-btn" data-type="Takeaway">
+            <svg class="seg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1.2 12H5.2zM8 8V6a4 4 0 018 0v2"/></svg>
+            <span>Takeaway</span>
+          </button>
+          <button class="seg-btn" data-type="Dine-in">
+            <svg class="seg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v7M4.5 3v5a2.5 2.5 0 005 0V3M7 10v11M16 3v18M16 3c3 2 3 7 0 9"/></svg>
+            <span>Dine-in</span>
+          </button>
+        </div>
+        <span class="time-select"
+          ><span class="green-dot"></span> 35–50 min <span>⌄</span></span
+        >
+      </div>
+    </section>
+    <section class="order-bar" id="postcodeBar">
+      <div class="wrap order-bar-inner">
+        <div class="ob-label">
+          <span class="pin"></span>
+          <div>
+            <strong>Fresh to your door?</strong
+            ><small>Check if we deliver to your postcode.</small>
+          </div>
+        </div>
+        <form class="postcode-form" id="postcodeForm">
+          <input
+            id="postcodeInput"
+            placeholder="Enter UK postcode"
+            autocomplete="postal-code"
+          /><button type="submit">Check</button>
+        </form>
+      </div>
+      <p class="postcode-msg wrap" id="postcodeMsg"></p>
+    </section>
+
+    <!-- ═══ EXPLORE CATEGORIES ═══ -->
+    <section class="wrap categories" id="categories">
+      <div class="cat-head">
+        <h2>Explore <span class="red">Categories</span></h2>
+        <span class="cat-hint">Scroll →</span>
+      </div>
+      <div class="cinematic-slider cat-slider">
+        <button
+          class="slider-arrow slider-prev"
+          type="button"
+          data-slider="catRow"
+          aria-label="Previous categories"
+        >
+          ‹
+        </button>
+        <div class="cat-row" id="catRow">
+          <button class="cat-card" data-goto="pizza">
+            <img
+              src="images/The%20Red%20Pepperoni%20Pizza.png"
+              alt="Pizzas"
+            /><span>Pizzas</span>
+          </button>
+          <button class="cat-card" data-goto="wok">
+            <img
+              src="images/Hakka%20Chow%20Mein.png"
+              alt="Chinese — Wok & Roll"
+            /><span>Wok &amp; Roll · Chinese</span>
+          </button>
+          <button class="cat-card" data-goto="deals">
+            <img
+              src="images/Loaded%20Pepperoni%20Fries.png"
+              alt="Top Deals"
+            /><span>Top Deals</span>
+          </button>
+          <button class="cat-card" data-goto="sides">
+            <img src="images/Crispy%20Wings.png" alt="Sides" /><span
+              >Sides</span
+            >
+          </button>
+          <button class="cat-card" data-goto="desserts">
+            <img src="images/Chocolate%20Brownie.png" alt="Desserts" /><span
+              >Desserts</span
+            >
+          </button>
+          <button class="cat-card" data-goto="builder">
+            <img src="images/dough-toss.png" alt="Build your own pizza" /><span
+              >Build Your Own</span
+            >
+          </button>
+        </div>
+        <button
+          class="slider-arrow slider-next"
+          type="button"
+          data-slider="catRow"
+          aria-label="Next categories"
+        >
+          ›
+        </button>
+      </div>
+    </section>
+
+    <main class="wrap menu-section" id="menu">
+      <div class="menu-head">
+        <div>
+          <p class="kicker">THE GOOD STUFF</p>
+          <h2 id="menuTitle">Cravings, <span class="red">sorted.</span></h2>
+          <p class="menu-sub" id="menuSub"></p>
+          <p class="menu-hint">
+            Click any item to see its ingredients &amp; customise it.
+          </p>
+        </div>
+        <nav class="kitchen-toggle small">
+          <button class="kt-btn active" data-kitchen="pizza">
+            Pizza &amp; Grill
+          </button>
+          <button class="kt-btn" data-kitchen="wok">Wok &amp; Roll</button>
+        </nav>
+      </div>
+      <div class="menu-tools">
+        <div class="tabs" id="menuTabs"></div>
+        <label class="search-box"
+          ><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg><input id="searchInput" aria-label="Search the menu" placeholder="Search the menu…"
+        /></label>
+        <span class="tab-note" id="tabNote"></span>
+      </div>
+      <div class="grid" id="menuGrid"></div>
+      <p class="no-results" id="noResults" hidden>
+        Nothing matches that search — try “pizza”, “noodles” or “spicy”.
+      </p>
+      <div class="menu-foot">
+        <span>GOOD FOOD TAKES A LITTLE TIME.</span
+        ><span>EVERYTHING MADE FRESH TO ORDER.</span>
+      </div>
+    </main>
+
+    <!-- ═══ TOP DEALS ═══ -->
+    <section class="wrap deals-section" id="deals">
+      <p class="kicker">TOP DEALS</p>
+      <h2>Deals that <span class="red">feed everyone.</span></h2>
+      <div class="cinematic-slider deals-slider">
+        <button
+          class="slider-arrow slider-prev"
+          type="button"
+          data-slider="dealsGrid"
+          aria-label="Previous deals"
+        >
+          ‹
+        </button>
+        <div class="grid deals-grid" id="dealsGrid"></div>
+        <button
+          class="slider-arrow slider-next"
+          type="button"
+          data-slider="dealsGrid"
+          aria-label="Next deals"
+        >
+          ›
+        </button>
+      </div>
+    </section>
+
+    <!-- ═══ BUILD YOUR OWN ═══ -->
+    <section class="wrap builder-section" id="builder">
+      <p class="kicker">MAKE IT YOURS</p>
+      <div class="builder-head">
+        <h2>Make your <span class="red">customized</span> pizza.</h2>
+        <span class="builder-note"
+          >Your pizza, your rules — watch it build itself
+        </span>
+      </div>
+      <div class="builder-card">
+        <div class="builder-preview">
+          <div class="pizza-stage">
+            <div class="pizza-anim" id="pizzaAnim">
+              <div class="pizza-crust" id="pizzaCrust">
+                <img
+                  class="pizza-base-image"
+                  src="images/Isolated%20Golden%20Cheese%20Pizza.png"
+                  alt="Golden cheese pizza base"
+                />
+                <div class="pizza-sauce" id="pizzaSauce">
+                  <div class="pizza-cheese"></div>
+                  <div id="toppingLayer"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="pv-label">YOUR CREATION · LIVE PREVIEW</p>
+          <p class="pv-sub" id="pvSub">
+            <strong>Medium · Classic crust · Tomato</strong>
+          </p>
+        </div>
+        <div class="builder-options">
+          <p class="opt-title"><span>01</span> Choose your size</p>
+          <div class="opt-row" id="sizeRow">
+            <button class="opt" data-adj="-3" data-label='Small 10"'>
+              <strong>Small</strong><small>10" · −£3.00</small>
+            </button>
+            <button class="opt active" data-adj="0" data-label='Medium 12"'>
+              <strong>Medium</strong><small>12" · Included</small>
+            </button>
+            <button class="opt" data-adj="4" data-label='Large 14"'>
+              <strong>Large</strong><small>14" · +£4.00</small>
+            </button>
+            <button class="opt" data-adj="7" data-label='Extra Large 16"'>
+              <strong>Extra Large</strong><small>16" · +£7.00</small>
+            </button>
+          </div>
+          <p class="opt-title"><span>02</span> Choose your base</p>
+          <div class="opt-row" id="baseRow">
+            <button
+              class="opt active"
+              data-price="0"
+              data-label="Classic"
+              data-crust="classic"
+            >
+              <strong>Classic</strong><small>Included</small>
+            </button>
+            <button
+              class="opt"
+              data-price="2.50"
+              data-label="Stuffed"
+              data-crust="stuffed"
+            >
+              <strong>Stuffed</strong><small>+£2.50</small>
+            </button>
+            <button
+              class="opt"
+              data-price="1.50"
+              data-label="Pan"
+              data-crust="pan"
+            >
+              <strong>Pan</strong><small>+£1.50</small>
+            </button>
+            <button
+              class="opt"
+              data-price="0"
+              data-label="Thin & Crispy"
+              data-crust="thin"
+            >
+              <strong>Thin &amp; Crispy</strong><small>Included</small>
+            </button>
+          </div>
+          <p class="opt-title"><span>03</span> Pick your sauce</p>
+          <div class="opt-row sauces" id="sauceRow">
+            <button
+              class="opt pill active"
+              data-label="Tomato"
+              data-sauce="tomato"
+            >
+              <i class="sauce-dot tomato"></i>Tomato
+            </button>
+            <button class="opt pill" data-label="BBQ" data-sauce="bbq">
+              <i class="sauce-dot bbq"></i>BBQ
+            </button>
+            <button
+              class="opt pill"
+              data-label="Spicy red pepper"
+              data-sauce="spicy"
+            >
+              <i class="sauce-dot spicy"></i>Spicy red pepper
+            </button>
+          </div>
+          <p class="opt-title"><span>04</span> Load it up</p>
+          <div class="opt-grid" id="toppingGrid">
+            <button
+              class="opt topping active"
+              type="button"
+              aria-pressed="true"
+              data-price="1.50"
+              data-label="Pepperoni"
+              data-top="pepperoni"
+            >
+              <span
+                class="topping-thumb pepperoni-thumb"
+                aria-hidden="true"
+              ></span
+              ><span class="topping-copy"
+                ><strong>Pepperoni</strong><small>+£1.50</small></span
+              ><span class="check" aria-hidden="true">✓</span>
+            </button>
+            <button
+              class="opt topping"
+              type="button"
+              aria-pressed="false"
+              data-price="1.00"
+              data-label="Mushrooms"
+              data-top="mushroom"
+            >
+              <img
+                class="topping-thumb"
+                src="images/Photorealistic%20Sliced%20Button%20Mushroom.png"
+                alt=""
+              /><span class="topping-copy"
+                ><strong>Mushrooms</strong><small>+£1.00</small></span
+              ><span class="check" aria-hidden="true">✓</span>
+            </button>
+            <button
+              class="opt topping"
+              type="button"
+              aria-pressed="false"
+              data-price="1.75"
+              data-label="Extra cheese"
+              data-top="cheese"
+            >
+              <img
+                class="topping-thumb"
+                src="images/Shredded%20Cheese%20Mound%20Cutout.png"
+                alt=""
+              /><span class="topping-copy"
+                ><strong>Extra cheese</strong><small>+£1.75</small></span
+              ><span class="check" aria-hidden="true">✓</span>
+            </button>
+            <button
+              class="opt topping"
+              type="button"
+              aria-pressed="false"
+              data-price="0.85"
+              data-label="Jalapeños"
+              data-top="jalapeno"
+            >
+              <img
+                class="topping-thumb"
+                src="images/Glossy%20Pickled%20Jalape%C3%B1o%20Slice%201.png"
+                alt=""
+              /><span class="topping-copy"
+                ><strong>Jalapeños</strong><small>+£0.85</small></span
+              ><span class="check" aria-hidden="true">✓</span>
+            </button>
+            <button
+              class="opt topping"
+              type="button"
+              aria-pressed="false"
+              data-price="0.99"
+              data-label="Green bell peppers"
+              data-top="peppers"
+            >
+              <img
+                class="topping-thumb"
+                src="images/Glossy%20Red%20Bell%20Pepper%20Slice.png"
+                alt=""
+              /><span class="topping-copy"
+                ><strong>Green bell peppers</strong><small>+£0.99</small></span
+              ><span class="check" aria-hidden="true">✓</span>
+            </button>
+            <button
+              class="opt topping"
+              type="button"
+              aria-pressed="false"
+              data-price="0.99"
+              data-label="Onion"
+              data-top="onion"
+            >
+              <img
+                class="topping-thumb"
+                src="images/Glossy%20Purple%20Onion%20Slice%201.png"
+                alt=""
+              /><span class="topping-copy"
+                ><strong>Onion</strong><small>+£0.99</small></span
+              ><span class="check" aria-hidden="true">✓</span>
+            </button>
+          </div>
+          <div class="builder-foot">
+            <div>
+              <small class="kcal">~675 kcal · live price</small
+              ><strong class="total" id="builderTotal">£13.45</strong>
+            </div>
+            <button class="btn-red small" id="addCustom">
+              Add your pizza <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ REWARDS + FOOTER ═══ -->
+    <section class="rewards">
+      <div class="wrap rewards-inner">
+        <div class="rewards-copy">
+          <p class="kicker">THE GOOD STUFF CLUB</p>
+          <h2>
+            A little love<br />back in your <span class="red">pocket.</span>
+          </h2>
+          <p>
+            Scan the QR on your table or menu for a flat 10% off your bill.
+            Plus, earn stamps every time you order. Use code
+            <strong style="color: #fff">PEPPER10</strong> in your bag for 10%
+            off.
+          </p>
+          <form class="promo-form" id="promoForm">
+            <input id="promoInput" placeholder="Got a promo code?" /><button
+              type="submit"
+            >
+              Apply code
+            </button>
+          </form>
+          <p class="promo-msg" id="promoMsg"></p>
+        </div>
+        <div class="reward-card">
+          <div class="rc-head">
+            <span>RED PEPPER REWARDS</span><span class="rc-spark"></span>
+          </div>
+          <h3>Little bites.<br /><span>Big rewards.</span></h3>
+          <div class="stamps">
+            <span class="stamp filled">🔥</span
+            ><span class="stamp filled">🔥</span
+            ><span class="stamp filled">🔥</span><span class="stamp">+</span
+            ><span class="stamp">+</span><span class="stamp">+</span>
+          </div>
+          <p class="rc-note">3 of 6 stamps · One more order = free side</p>
+          <div class="rc-foot">
+            <span>MEMBER SINCE 2024</span><span>RPP · 00124</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-main">
+      <div class="wrap">
+        <p class="kicker">LOYALTY CARDS</p>
+        <h2 class="footer-loyalty-title">
+          Carry a little <span class="red">Red Pepper</span> with you.
+        </h2>
+        <div class="loyalty-row">
+          <div class="loyalty-card lc-red">
+            <div class="rc-head">
+              <span>RED PEPPER REWARDS</span><span></span>
+            </div>
+            <p class="lc-big">Little bites.<br />Big rewards.</p>
+            <div class="stamps small-stamps">
+              <span class="stamp filled">🔥</span
+              ><span class="stamp filled">🔥</span
+              ><span class="stamp filled">🔥</span><span class="stamp">+</span
+              ><span class="stamp">+</span><span class="stamp">+</span>
+            </div>
+            <div class="rc-foot">
+              <span>MEMBER SINCE 2024</span><span>RPP · 00124</span>
+            </div>
+          </div>
+          <div class="loyalty-card lc-gold">
+            <div class="rc-head"><span>GOLD MEMBER</span><span></span></div>
+            <p class="lc-big">10% off.<br />Every single order.</p>
+            <p class="lc-note">Free garlic bites on your birthday 🎂</p>
+            <div class="rc-foot">
+              <span>GOLD · NO EXPIRY</span><span>RPP · GOLD</span>
+            </div>
+          </div>
+          <div class="loyalty-card lc-dark">
+            <div class="rc-head"><span>GIFT CARD</span><span></span></div>
+            <p class="lc-big">
+              £25<br /><span class="lc-big-sub">for the pizza lover</span>
+            </p>
+            <p class="lc-note">In store &amp; online · never expires</p>
+            <div class="rc-foot">
+              <span>RED PEPPER</span><span>RPP · GIFT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2025 Red Pepper Pizza · All rights reserved</span
+          ><span>Prices in GBP (£) · VAT included</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══ CART DRAWER ═══ -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Your bag">
+      <div class="cart-head">
+        <div>
+          <h3>
+            <svg class="cart-title-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M2.5 3.5h2l2.2 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4l1.4-6.4H6.1"
+              />
+              <circle cx="9" cy="19.5" r="1.25" />
+              <circle cx="17.5" cy="19.5" r="1.25" /></svg
+            >Your bag
+          </h3>
+          <small id="cartMeta">Delivery · 35–50 min</small>
+        </div>
+        <button class="cart-close" id="cartClose" aria-label="Close bag">
+          ✕
+        </button>
+      </div>
+      <div class="free-bar-wrap" id="freeBarWrap">
+        <p id="freeBarText"></p>
+        <div class="free-bar"><span id="freeBarFill"></span></div>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <p class="cart-empty" id="cartEmpty">
+        Your bag is empty.<br /><small
+          >Add something good from the menu 🍕🥡</small
+        >
+      </p>
+      <div class="cart-summary" id="cartSummary">
+        <form class="promo-form cart-promo" id="cartPromoForm">
+          <input
+            id="cartPromoInput"
+            placeholder="Promo code (try PEPPER10)"
+          /><button type="submit">Apply</button>
+        </form>
+        <p class="promo-msg" id="cartPromoMsg"></p>
+        <div class="sum-row">
+          <span>Subtotal</span><strong id="sumSubtotal">£0.00</strong>
+        </div>
+        <div class="sum-row discount-row" id="discountRow" hidden>
+          <span>Discount (PEPPER10)</span
+          ><strong id="sumDiscount">−£0.00</strong>
+        </div>
+        <div class="sum-row">
+          <span id="deliveryLabel">Delivery</span
+          ><strong id="sumDelivery">£2.95</strong>
+        </div>
+        <div class="sum-row total">
+          <span>Total</span><strong id="sumTotal">£0.00</strong>
+        </div>
+        <button class="btn-red checkout-btn" id="checkoutBtn">
+          Checkout <span>→</span>
+        </button>
+        <button class="clear-btn" id="clearCart">Clear bag</button>
+      </div>
+    </aside>
+    <button class="floating-bag" id="floatingBag" hidden>
+      <svg class="floating-bag-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M2.5 3.5h2l2.2 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4l1.4-6.4H6.1"
+        />
+        <circle cx="9" cy="19.5" r="1.25" />
+        <circle cx="17.5" cy="19.5" r="1.25" /></svg
+      ><span>View bag · <strong id="floatingTotal">£0.00</strong></span>
     </button>
-    <button class="login-btn" id="loginBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20v-1.5A6.5 6.5 0 0 1 11.5 12h1A6.5 6.5 0 0 1 19 18.5V20"/></svg><span>Login</span></button>
-    <button class="bag-btn" id="bagBtn" aria-label="Open your bag"><svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 3.5h2l2.2 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4l1.4-6.4H6.1"/><circle cx="9" cy="19.5" r="1.25"/><circle cx="17.5" cy="19.5" r="1.25"/></svg><span>Your bag</span><span class="bag-count" id="bagCount">0</span></button>
-  </div>
-</header>
 
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-inner">
-    <p class="eyebrow"><span class="eyebrow-line"></span> GOOD FOOD. NO COMPROMISE.</p>
-    <h1>Big flavour.<br>Zero <span class="red">boring.</span></h1>
-    <p class="hero-sub">Hand-stretched pizza meets wok-fired favourites.<br>One kitchen. Two seriously good cravings.</p>
-    <a href="#menu" class="btn-red">Order something good <span>→</span></a>
-    <p class="stars">★★★★★ <span>4.8/5 from 2,400+ hungry locals</span></p>
-  </div>
-  <span class="hero-foot-left">INDEPENDENT. IN YOUR NEIGHBOURHOOD.</span>
-  <span class="hero-foot-right">— SCROLL TO EXPLORE</span>
-</section>
-
-<section class="order-bar">
-  <div class="wrap order-bar-inner">
-    <div class="ob-label"><span class="pin"></span><div><strong>How do you want it?</strong><small>Choose your perfect pickup</small></div></div>
-    <div class="seg" id="orderType">
-      <button class="seg-btn active" data-type="Delivery">🚚 Delivery</button>
-      <button class="seg-btn" data-type="Takeaway">🛍 Takeaway</button>
-      <button class="seg-btn" data-type="Dine-in">🍴 Dine-in</button>
-    </div>
-    <span class="time-select"><span class="green-dot"></span> 35–50 min <span>⌄</span></span>
-  </div>
-</section>
-<section class="order-bar" id="postcodeBar">
-  <div class="wrap order-bar-inner">
-    <div class="ob-label"><span class="pin"></span><div><strong>Fresh to your door?</strong><small>Check if we deliver to your postcode.</small></div></div>
-    <form class="postcode-form" id="postcodeForm"><input id="postcodeInput" placeholder="Enter UK postcode" autocomplete="postal-code"><button type="submit">Check</button></form>
-  </div>
-  <p class="postcode-msg wrap" id="postcodeMsg"></p>
-</section>
-
-<!-- ═══ EXPLORE CATEGORIES ═══ -->
-<section class="wrap categories" id="categories">
-  <div class="cat-head"><h2>Explore <span class="red">Categories</span></h2><span class="cat-hint">Scroll →</span></div>
-  <div class="cinematic-slider cat-slider">
-    <button class="slider-arrow slider-prev" type="button" data-slider="catRow" aria-label="Previous categories">‹</button>
-    <div class="cat-row" id="catRow">
-      <button class="cat-card" data-goto="pizza"><img src="images/The%20Red%20Pepperoni%20Pizza.png" alt="Pizzas"><span>Pizzas</span></button>
-      <button class="cat-card" data-goto="wok"><img src="images/Hakka%20Chow%20Mein.png" alt="Chinese — Wok & Roll"><span>Wok &amp; Roll · Chinese</span></button>
-      <button class="cat-card" data-goto="deals"><img src="images/Loaded%20Pepperoni%20Fries.png" alt="Top Deals"><span>Top Deals</span></button>
-      <button class="cat-card" data-goto="sides"><img src="images/Crispy%20Wings.png" alt="Sides"><span>Sides</span></button>
-      <button class="cat-card" data-goto="desserts"><img src="images/Chocolate%20Brownie.png" alt="Desserts"><span>Desserts</span></button>
-      <button class="cat-card" data-goto="builder"><img src="images/dough-toss.png" alt="Build your own pizza"><span>Build Your Own</span></button>
-    </div>
-    <button class="slider-arrow slider-next" type="button" data-slider="catRow" aria-label="Next categories">›</button>
-  </div>
-</section>
-
-<main class="wrap menu-section" id="menu">
-  <div class="menu-head">
-    <div><p class="kicker">THE GOOD STUFF</p><h2 id="menuTitle">Cravings, <span class="red">sorted.</span></h2><p class="menu-sub" id="menuSub"></p><p class="menu-hint">Click any item to see its ingredients &amp; customise it.</p></div>
-    <nav class="kitchen-toggle small">
-      <button class="kt-btn active" data-kitchen="pizza">Pizza &amp; Grill</button>
-      <button class="kt-btn" data-kitchen="wok">Wok &amp; Roll</button>
-    </nav>
-  </div>
-  <div class="menu-tools">
-    <div class="tabs" id="menuTabs"></div>
-    <label class="search-box"><input id="searchInput" placeholder="Search the menu…"></label>
-    <span class="tab-note" id="tabNote"></span>
-  </div>
-  <div class="grid" id="menuGrid"></div>
-  <p class="no-results" id="noResults" hidden>Nothing matches that search — try “pizza”, “noodles” or “spicy”.</p>
-  <div class="menu-foot"><span>GOOD FOOD TAKES A LITTLE TIME.</span><span>EVERYTHING MADE FRESH TO ORDER.</span></div>
-</main>
-
-<!-- ═══ TOP DEALS ═══ -->
-<section class="wrap deals-section" id="deals">
-  <p class="kicker">TOP DEALS</p>
-  <h2>Deals that <span class="red">feed everyone.</span></h2>
-  <div class="cinematic-slider deals-slider">
-    <button class="slider-arrow slider-prev" type="button" data-slider="dealsGrid" aria-label="Previous deals">‹</button>
-    <div class="grid deals-grid" id="dealsGrid"></div>
-    <button class="slider-arrow slider-next" type="button" data-slider="dealsGrid" aria-label="Next deals">›</button>
-  </div>
-</section>
-
-<!-- ═══ BUILD YOUR OWN ═══ -->
-<section class="wrap builder-section" id="builder">
-  <p class="kicker">MAKE IT YOURS</p>
-  <div class="builder-head"><h2>Make your <span class="red">customized</span> pizza.</h2><span class="builder-note">Your pizza, your rules — watch it build itself </span></div>
-  <div class="builder-card">
-    <div class="builder-preview">
-      <div class="pizza-stage">
-        <div class="pizza-anim" id="pizzaAnim">
-          <div class="pizza-crust" id="pizzaCrust"><img class="pizza-base-image" src="images/Isolated%20Golden%20Cheese%20Pizza.png" alt="Golden cheese pizza base"><div class="pizza-sauce" id="pizzaSauce"><div class="pizza-cheese"></div><div id="toppingLayer"></div></div></div>
+    <!-- ═══ ITEM MODAL ═══ -->
+    <div class="modal" id="itemModal" hidden>
+      <div class="modal-card item-card-modal">
+        <button class="cart-close modal-x" data-close-item>✕</button>
+        <div class="item-modal-img">
+          <img id="imImg" src="" alt="" /><span
+            class="im-price"
+            id="imFromPrice"
+          ></span>
+        </div>
+        <h3 id="imName"></h3>
+        <p class="modal-sub" id="imDesc"></p>
+        <p class="im-label">🧾 Ingredients</p>
+        <div class="ing-chips" id="imIngredients"></div>
+        <p class="im-allergen" id="imAllergen"></p>
+        <div id="imOptions"></div>
+        <div class="item-modal-foot">
+          <div class="qty big-qty">
+            <button id="imDec" aria-label="Less">−</button
+            ><span id="imQty">1</span
+            ><button id="imInc" aria-label="More">+</button>
+          </div>
+          <button class="btn-red checkout-btn" id="imAdd">
+            Add to Cart · <span id="imTotal"></span>
+          </button>
         </div>
       </div>
-      <p class="pv-label">YOUR CREATION · LIVE PREVIEW</p>
-      <p class="pv-sub" id="pvSub"><strong>Medium · Classic crust · Tomato</strong></p>
-    </div>
-    <div class="builder-options">
-      <p class="opt-title"><span>01</span> Choose your size</p>
-      <div class="opt-row" id="sizeRow">
-        <button class="opt" data-adj="-3" data-label="Small 10&quot;"><strong>Small</strong><small>10" · −£3.00</small></button>
-        <button class="opt active" data-adj="0" data-label="Medium 12&quot;"><strong>Medium</strong><small>12" · Included</small></button>
-        <button class="opt" data-adj="4" data-label="Large 14&quot;"><strong>Large</strong><small>14" · +£4.00</small></button>
-        <button class="opt" data-adj="7" data-label="Extra Large 16&quot;"><strong>Extra Large</strong><small>16" · +£7.00</small></button>
-      </div>
-      <p class="opt-title"><span>02</span> Choose your base</p>
-      <div class="opt-row" id="baseRow">
-        <button class="opt active" data-price="0" data-label="Classic" data-crust="classic"><strong>Classic</strong><small>Included</small></button>
-        <button class="opt" data-price="2.50" data-label="Stuffed" data-crust="stuffed"><strong>Stuffed</strong><small>+£2.50</small></button>
-        <button class="opt" data-price="1.50" data-label="Pan" data-crust="pan"><strong>Pan</strong><small>+£1.50</small></button>
-        <button class="opt" data-price="0" data-label="Thin & Crispy" data-crust="thin"><strong>Thin &amp; Crispy</strong><small>Included</small></button>
-      </div>
-      <p class="opt-title"><span>03</span> Pick your sauce</p>
-      <div class="opt-row sauces" id="sauceRow">
-        <button class="opt pill active" data-label="Tomato" data-sauce="tomato"><i class="sauce-dot tomato"></i>Tomato</button>
-        <button class="opt pill" data-label="BBQ" data-sauce="bbq"><i class="sauce-dot bbq"></i>BBQ</button>
-        <button class="opt pill" data-label="Spicy red pepper" data-sauce="spicy"><i class="sauce-dot spicy"></i>Spicy red pepper</button>
-      </div>
-      <p class="opt-title"><span>04</span> Load it up</p>
-      <div class="opt-grid" id="toppingGrid">
-        <button class="opt topping active" type="button" aria-pressed="true" data-price="1.50" data-label="Pepperoni" data-top="pepperoni"><span class="topping-thumb pepperoni-thumb" aria-hidden="true"></span><span class="topping-copy"><strong>Pepperoni</strong><small>+£1.50</small></span><span class="check" aria-hidden="true">✓</span></button>
-        <button class="opt topping" type="button" aria-pressed="false" data-price="1.00" data-label="Mushrooms" data-top="mushroom"><img class="topping-thumb" src="images/Photorealistic%20Sliced%20Button%20Mushroom.png" alt=""><span class="topping-copy"><strong>Mushrooms</strong><small>+£1.00</small></span><span class="check" aria-hidden="true">✓</span></button>
-        <button class="opt topping" type="button" aria-pressed="false" data-price="1.75" data-label="Extra cheese" data-top="cheese"><img class="topping-thumb" src="images/Shredded%20Cheese%20Mound%20Cutout.png" alt=""><span class="topping-copy"><strong>Extra cheese</strong><small>+£1.75</small></span><span class="check" aria-hidden="true">✓</span></button>
-        <button class="opt topping" type="button" aria-pressed="false" data-price="0.85" data-label="Jalapeños" data-top="jalapeno"><img class="topping-thumb" src="images/Glossy%20Pickled%20Jalape%C3%B1o%20Slice%201.png" alt=""><span class="topping-copy"><strong>Jalapeños</strong><small>+£0.85</small></span><span class="check" aria-hidden="true">✓</span></button>
-        <button class="opt topping" type="button" aria-pressed="false" data-price="0.99" data-label="Green bell peppers" data-top="peppers"><img class="topping-thumb" src="images/Glossy%20Red%20Bell%20Pepper%20Slice.png" alt=""><span class="topping-copy"><strong>Green bell peppers</strong><small>+£0.99</small></span><span class="check" aria-hidden="true">✓</span></button>
-        <button class="opt topping" type="button" aria-pressed="false" data-price="0.99" data-label="Onion" data-top="onion"><img class="topping-thumb" src="images/Glossy%20Purple%20Onion%20Slice%201.png" alt=""><span class="topping-copy"><strong>Onion</strong><small>+£0.99</small></span><span class="check" aria-hidden="true">✓</span></button>
-      </div>
-      <div class="builder-foot">
-        <div><small class="kcal">~675 kcal · live price</small><strong class="total" id="builderTotal">£13.45</strong></div>
-        <button class="btn-red small" id="addCustom">Add your pizza <span>→</span></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ REWARDS + FOOTER ═══ -->
-<section class="rewards">
-  <div class="wrap rewards-inner">
-    <div class="rewards-copy">
-      <p class="kicker">THE GOOD STUFF CLUB</p>
-      <h2>A little love<br>back in your <span class="red">pocket.</span></h2>
-      <p>Scan the QR on your table or menu for a flat 10% off your bill. Plus, earn stamps every time you order. Use code <strong style="color:#fff">PEPPER10</strong> in your bag for 10% off.</p>
-      <form class="promo-form" id="promoForm"><input id="promoInput" placeholder="Got a promo code?"><button type="submit">Apply code</button></form>
-      <p class="promo-msg" id="promoMsg"></p>
-    </div>
-    <div class="reward-card">
-      <div class="rc-head"><span>RED PEPPER REWARDS</span><span class="rc-spark"></span></div>
-      <h3>Little bites.<br><span>Big rewards.</span></h3>
-      <div class="stamps"><span class="stamp filled">🔥</span><span class="stamp filled">🔥</span><span class="stamp filled">🔥</span><span class="stamp">+</span><span class="stamp">+</span><span class="stamp">+</span></div>
-      <p class="rc-note">3 of 6 stamps · One more order = free side</p>
-      <div class="rc-foot"><span>MEMBER SINCE 2024</span><span>RPP · 00124</span></div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer-main">
-  <div class="wrap">
-    <p class="kicker">LOYALTY CARDS</p>
-    <h2 class="footer-loyalty-title">Carry a little <span class="red">Red Pepper</span> with you.</h2>
-    <div class="loyalty-row">
-      <div class="loyalty-card lc-red">
-        <div class="rc-head"><span>RED PEPPER REWARDS</span><span></span></div>
-        <p class="lc-big">Little bites.<br>Big rewards.</p>
-        <div class="stamps small-stamps"><span class="stamp filled">🔥</span><span class="stamp filled">🔥</span><span class="stamp filled">🔥</span><span class="stamp">+</span><span class="stamp">+</span><span class="stamp">+</span></div>
-        <div class="rc-foot"><span>MEMBER SINCE 2024</span><span>RPP · 00124</span></div>
-      </div>
-      <div class="loyalty-card lc-gold">
-        <div class="rc-head"><span>GOLD MEMBER</span><span></span></div>
-        <p class="lc-big">10% off.<br>Every single order.</p>
-        <p class="lc-note">Free garlic bites on your birthday 🎂</p>
-        <div class="rc-foot"><span>GOLD · NO EXPIRY</span><span>RPP · GOLD</span></div>
-      </div>
-      <div class="loyalty-card lc-dark">
-        <div class="rc-head"><span>GIFT CARD</span><span></span></div>
-        <p class="lc-big">£25<br><span class="lc-big-sub">for the pizza lover</span></p>
-        <p class="lc-note">In store &amp; online · never expires</p>
-        <div class="rc-foot"><span>RED PEPPER</span><span>RPP · GIFT</span></div>
-      </div>
     </div>
 
-    <div class="footer-bottom"><span>© 2025 Red Pepper Pizza · All rights reserved</span><span>Prices in GBP (£) · VAT included</span></div>
-  </div>
-</footer>
-
-<!-- ═══ CART DRAWER ═══ -->
-<div class="overlay" id="overlay"></div>
-<aside class="cart-drawer" id="cartDrawer" aria-label="Your bag">
-  <div class="cart-head"><div><h3><svg class="cart-title-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 3.5h2l2.2 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4l1.4-6.4H6.1"/><circle cx="9" cy="19.5" r="1.25"/><circle cx="17.5" cy="19.5" r="1.25"/></svg>Your bag</h3><small id="cartMeta">Delivery · 35–50 min</small></div><button class="cart-close" id="cartClose" aria-label="Close bag">✕</button></div>
-  <div class="free-bar-wrap" id="freeBarWrap"><p id="freeBarText"></p><div class="free-bar"><span id="freeBarFill"></span></div></div>
-  <div class="cart-items" id="cartItems"></div>
-  <p class="cart-empty" id="cartEmpty">Your bag is empty.<br><small>Add something good from the menu 🍕🥡</small></p>
-  <div class="cart-summary" id="cartSummary">
-    <form class="promo-form cart-promo" id="cartPromoForm"><input id="cartPromoInput" placeholder="Promo code (try PEPPER10)"><button type="submit">Apply</button></form>
-    <p class="promo-msg" id="cartPromoMsg"></p>
-    <div class="sum-row"><span>Subtotal</span><strong id="sumSubtotal">£0.00</strong></div>
-    <div class="sum-row discount-row" id="discountRow" hidden><span>Discount (PEPPER10)</span><strong id="sumDiscount">−£0.00</strong></div>
-    <div class="sum-row"><span id="deliveryLabel">Delivery</span><strong id="sumDelivery">£2.95</strong></div>
-    <div class="sum-row total"><span>Total</span><strong id="sumTotal">£0.00</strong></div>
-    <button class="btn-red checkout-btn" id="checkoutBtn">Checkout <span>→</span></button>
-    <button class="clear-btn" id="clearCart">Clear bag</button>
-  </div>
-</aside>
-<button class="floating-bag" id="floatingBag" hidden><svg class="floating-bag-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 3.5h2l2.2 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4l1.4-6.4H6.1"/><circle cx="9" cy="19.5" r="1.25"/><circle cx="17.5" cy="19.5" r="1.25"/></svg><span>View bag · <strong id="floatingTotal">£0.00</strong></span></button>
-
-<!-- ═══ ITEM MODAL ═══ -->
-<div class="modal" id="itemModal" hidden>
-  <div class="modal-card item-card-modal">
-    <button class="cart-close modal-x" data-close-item>✕</button>
-    <div class="item-modal-img"><img id="imImg" src="" alt=""><span class="im-price" id="imFromPrice"></span></div>
-    <h3 id="imName"></h3>
-    <p class="modal-sub" id="imDesc"></p>
-    <p class="im-label">🧾 Ingredients</p>
-    <div class="ing-chips" id="imIngredients"></div>
-    <p class="im-allergen" id="imAllergen"></p>
-    <div id="imOptions"></div>
-    <div class="item-modal-foot">
-      <div class="qty big-qty"><button id="imDec" aria-label="Less">−</button><span id="imQty">1</span><button id="imInc" aria-label="More">+</button></div>
-      <button class="btn-red checkout-btn" id="imAdd">Add to Cart · <span id="imTotal"></span></button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ LOGIN MODAL ═══ -->
-<div class="modal" id="loginModal" hidden>
-  <div class="modal-card">
-    <button class="cart-close modal-x" data-close-login>✕</button>
-    <div id="loginForms">
-      <h3 id="loginTitle">Welcome back </h3>
-      <p class="modal-sub">Login to order faster, see your stamps and reorder your favourites.</p>
-      <div class="auth-tabs"><button class="auth-tab active" id="tabLogin">Login</button><button class="auth-tab" id="tabSignup">Create account</button></div>
-      <form id="loginForm">
-        <label id="nameWrap" hidden>Your name<input id="auName" placeholder="e.g. Alex Khan" autocomplete="name"></label>
-        <label>Email<input required type="email" id="auEmail" placeholder="you@example.co.uk" autocomplete="email"></label>
-        <label>Password<input required type="password" id="auPass" placeholder="••••••••" autocomplete="current-password"></label>
-        <p class="promo-msg" id="authMsg"></p>
-        <button class="btn-red checkout-btn" type="submit" id="authSubmit">Login <span>→</span></button>
-      </form>
-      <button class="clear-btn" id="guestBtn">Continue as guest</button>
-    </div>
-    <div id="profileBox" hidden>
-      <h3 id="profileTitle">Your account</h3>
-      <p class="modal-sub" id="profileText"></p>
-      <div class="success-box">🔥 Loyalty: <strong>3 of 6 stamps</strong> — one more order = a free side.<br>⭐ Gold progress: 7 of 10 orders.</div>
-      <button class="btn-red checkout-btn" id="logoutBtn">Logout</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ CHECKOUT + SUCCESS ═══ -->
-<div class="modal" id="checkoutModal" hidden>
-  <div class="modal-card">
-    <button class="cart-close modal-x" data-close>✕</button>
-    <h3>Checkout</h3><p class="modal-sub" id="checkoutMeta"></p>
-    <form id="checkoutForm">
-      <label>Your name<input required id="coName" placeholder="e.g. Alex Khan" autocomplete="name"></label>
-      <label>Phone<input required id="coPhone" placeholder="07xxx xxx xxx" autocomplete="tel" inputmode="tel"></label>
-      <label id="coAddressWrap">Delivery address<input id="coAddress" placeholder="House no, street"></label>
-      <label id="coPostcodeWrap">Postcode<input id="coPostcode" placeholder="e.g. SW1A 1AA" autocomplete="postal-code"></label>
-      <label id="coDriverWrap">Driver instructions (optional)<input id="coDriver" placeholder="Gate code, safe place, landmark…"></label>
-      <label id="coCollectionWrap">Collection name<input id="coCollectionName" placeholder="Name for the counter"></label>
-      <label id="coTableWrap">Table number<input id="coTable" type="number" min="1" max="30" inputmode="numeric" placeholder="1–30"></label>
-      <label id="coGuestsWrap">Number of guests<input id="coGuests" type="number" min="1" max="30" inputmode="numeric" placeholder="e.g. 2"></label>
-      <label>Payment<select id="coPayment"><option>Card on delivery</option><option>Cash on delivery</option><option>Pay at counter</option></select></label>
-      <div class="checkout-schedule">
-        <p class="checkout-schedule-title" id="coScheduleTitle">When do you want it?</p>
-        <div class="checkout-radio-row">
-          <label><input type="radio" name="coTiming" value="asap" checked> <span id="coAsapLabel">ASAP</span></label>
-          <label><input type="radio" name="coTiming" value="scheduled"> <span id="coScheduledLabel">Schedule for later</span></label>
+    <!-- ═══ LOGIN MODAL ═══ -->
+    <div class="modal" id="loginModal" hidden>
+      <div class="modal-card">
+        <button class="cart-close modal-x" data-close-login>✕</button>
+        <div id="loginForms">
+          <h3 id="loginTitle">Welcome back</h3>
+          <p class="modal-sub">
+            Login to order faster, see your stamps and reorder your favourites.
+          </p>
+          <div class="auth-tabs">
+            <button class="auth-tab active" id="tabLogin">Login</button
+            ><button class="auth-tab" id="tabSignup">Create account</button>
+          </div>
+          <form id="loginForm">
+            <label id="nameWrap" hidden
+              >Your name<input
+                id="auName"
+                placeholder="e.g. Alex Khan"
+                autocomplete="name"
+            /></label>
+            <label
+              >Email<input
+                required
+                type="email"
+                id="auEmail"
+                placeholder="you@example.co.uk"
+                autocomplete="email"
+            /></label>
+            <label
+              >Password<input
+                required
+                type="password"
+                id="auPass"
+                placeholder="••••••••"
+                autocomplete="current-password"
+            /></label>
+            <p class="promo-msg" id="authMsg"></p>
+            <button class="btn-red checkout-btn" type="submit" id="authSubmit">
+              Login <span>→</span>
+            </button>
+          </form>
+          <button class="clear-btn" id="guestBtn">Continue as guest</button>
         </div>
-        <label id="coScheduleWrap" hidden><span id="coScheduleLabel">Choose a time</span><select id="coScheduleTime"></select></label>
+        <div id="profileBox" hidden>
+          <h3 id="profileTitle">Your account</h3>
+          <p class="modal-sub" id="profileText"></p>
+          <div class="success-box">
+            🔥 Loyalty: <strong>3 of 6 stamps</strong> — one more order = a free
+            side.<br />⭐ Gold progress: 7 of 10 orders.
+          </div>
+          <button class="btn-red checkout-btn" id="logoutBtn">Logout</button>
+        </div>
       </div>
-      <label>Notes (optional)<input id="coNotes" placeholder="Ring the bell twice, extra chilli…"></label>
-      <p class="checkout-error" id="coError" role="alert"></p>
-      <div class="sum-row total modal-total"><span>Total to pay</span><strong id="coTotal">£0.00</strong></div>
-      <button class="btn-red checkout-btn" type="submit">Place order <span>→</span></button>
-    </form>
-  </div>
-</div>
-<div class="modal" id="successModal" hidden>
-  <div class="modal-card success">
-    <div class="success-icon">✓</div>
-    <h3>Order confirmed!</h3>
-    <p class="modal-sub" id="successText"></p>
-    <div class="success-box" id="successBox"></div>
-    <button class="btn-red checkout-btn whatsapp-order-btn" id="waOrderBtn" hidden>Send order on WhatsApp <span>→</span></button>
-    <button class="btn-red checkout-btn" data-close>Back to menu</button>
-  </div>
-</div>
+    </div>
 
-<div class="toast" id="toast"></div>
-<script src="script.js?v=order-modes-1"></script>
-</body>
+    <!-- ═══ CHECKOUT + SUCCESS ═══ -->
+    <div class="modal" id="checkoutModal" hidden>
+      <div class="modal-card">
+        <button class="cart-close modal-x" data-close>✕</button>
+        <h3>Checkout</h3>
+        <p class="modal-sub" id="checkoutMeta"></p>
+        <form id="checkoutForm">
+          <label
+            >Your name<input
+              required
+              id="coName"
+              placeholder="e.g. Alex Khan"
+              autocomplete="name"
+          /></label>
+          <label
+            >Phone<input
+              required
+              id="coPhone"
+              placeholder="07xxx xxx xxx"
+              autocomplete="tel"
+              inputmode="tel"
+          /></label>
+          <label id="coAddressWrap"
+            >Delivery address<input
+              id="coAddress"
+              placeholder="House no, street"
+          /></label>
+          <label id="coPostcodeWrap"
+            >Postcode<input
+              id="coPostcode"
+              placeholder="e.g. SW1A 1AA"
+              autocomplete="postal-code"
+          /></label>
+          <label id="coDriverWrap"
+            >Driver instructions (optional)<input
+              id="coDriver"
+              placeholder="Gate code, safe place, landmark…"
+          /></label>
+          <label id="coCollectionWrap"
+            >Collection name<input
+              id="coCollectionName"
+              placeholder="Name for the counter"
+          /></label>
+          <label id="coTableWrap"
+            >Table number<input
+              id="coTable"
+              type="number"
+              min="1"
+              max="30"
+              inputmode="numeric"
+              placeholder="1–30"
+          /></label>
+          <label id="coGuestsWrap"
+            >Number of guests<input
+              id="coGuests"
+              type="number"
+              min="1"
+              max="30"
+              inputmode="numeric"
+              placeholder="e.g. 2"
+          /></label>
+          <label
+            >Payment<select id="coPayment">
+              <option>Card on delivery</option>
+              <option>Cash on delivery</option>
+              <option>Pay at counter</option>
+            </select></label
+          >
+          <div class="checkout-schedule">
+            <p class="checkout-schedule-title" id="coScheduleTitle">
+              When do you want it?
+            </p>
+            <div class="checkout-radio-row">
+              <label
+                ><input type="radio" name="coTiming" value="asap" checked />
+                <span id="coAsapLabel">ASAP</span></label
+              >
+              <label
+                ><input type="radio" name="coTiming" value="scheduled" />
+                <span id="coScheduledLabel">Schedule for later</span></label
+              >
+            </div>
+            <label id="coScheduleWrap" hidden
+              ><span id="coScheduleLabel">Choose a time</span
+              ><select id="coScheduleTime"></select
+            ></label>
+          </div>
+          <label
+            >Notes (optional)<input
+              id="coNotes"
+              placeholder="Ring the bell twice, extra chilli…"
+          /></label>
+          <p class="checkout-error" id="coError" role="alert"></p>
+          <div class="sum-row total modal-total">
+            <span>Total to pay</span><strong id="coTotal">£0.00</strong>
+          </div>
+          <button class="btn-red checkout-btn" type="submit">
+            Place order <span>→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="successModal" hidden>
+      <div class="modal-card success">
+        <div class="success-icon">✓</div>
+        <h3>Order confirmed!</h3>
+        <p class="modal-sub" id="successText"></p>
+        <div class="success-box" id="successBox"></div>
+        <button
+          class="btn-red checkout-btn whatsapp-order-btn"
+          id="waOrderBtn"
+          hidden
+        >
+          Send order on WhatsApp <span>→</span>
+        </button>
+        <button class="btn-red checkout-btn" data-close>Back to menu</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="script.js?v=order-modes-1"></script>
+  </body>
 </html>
